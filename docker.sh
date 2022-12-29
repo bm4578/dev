@@ -5,8 +5,10 @@
 message(){
   # shellcheck disable=SC2162
   read -p "
-  1.安装国内镜像(阿里源)，以及基本软件(wget、vim、git)
-  2.安装docker
+  注意：需要以root账户运行，不然容易出权限bug
+  0.安装国内镜像(阿里源)，以及基本软件(wget、vim、git)
+  1.卸载docker
+  2.安装docker(腾讯源)
   3.安装docker-compose
   4.安装minio(必须具备docker、docker-compose环境)
   5.退出脚本
@@ -28,17 +30,36 @@ environment() {
 # 安装docker
 install_docker() {
       curl -sSL https://get.daocloud.io/docker | sh
-      systemctl start docker
       systemctl enable docker
+      systemctl start docker
+      echo "安装国内加速器中"
+      sudo mkdir -p /etc/docker
+      sudo tee /etc/docker/daemon.json <<-'EOF'
+      {"registry-mirrors": ["https://mirror.ccs.tencentyun.com"]}
+EOF
+      sudo systemctl daemon-reload
+      sudo systemctl restart docker
       systemctl restart docker
       echo "docker安装完成！！！"
       message
 }
+# 卸载docker
+uninstall_docker(){
+  sudo yum remove docker \
+                  docker-client \
+                  docker-client-latest \
+                  docker-common \
+                  docker-latest \
+                  docker-latest-logrotate \
+                  docker-logrotate \
+                  docker-engine
+}
 
 # 安装docker-compose
 install_docker-compose() {
-      curl -L https://get.daocloud.io/docker/compose/releases/download/v2.4.1/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose      chmod +x /usr/local/bin/docker-compose
-      ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+      curl -L https://get.daocloud.io/docker/compose/releases/download/v2.4.1/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
+      sudo chmod +x /usr/local/bin/docker-compose
+      sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
       echo "docker-compose安装完成！！！"
       message
 }
@@ -63,8 +84,11 @@ install_minio() {
 main(){
       message
       case $? in
-        1)
+        0)
         environment
+        ;;
+        1)
+        uninstall_docker
         ;;
         2)
         install_docker
@@ -79,7 +103,7 @@ main(){
         exit 1
         ;;
         *)
-        echo -e "请输入正确的数字 (1-5)"
+        echo -e "请输入正确的数字 (0-5)"
         ;;
     esac
 
