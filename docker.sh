@@ -26,7 +26,7 @@ environment() {
       yum update -y
       yum install -y wget vim htop
       echo "系统初始化完成 ！！！"
-      message
+      exit 1
 }
 # 安装docker
 install_docker() {
@@ -43,16 +43,17 @@ EOF
       sudo systemctl restart docker
       systemctl restart docker
       echo "docker加速器安装完成 ！！！"
-      message
+      exit 1
 }
 # 卸载docker
 uninstall_docker(){
-  systemctl stop docker
-  rm -rf /etc/docker
-  rm -rf /run/docker
-  rm -rf /var/lib/dockershim
-  rm -rf /var/lib/docker
-  yum remove containerd.io.x86_64 docker-ce.x86_64 docker-ce-cli.x86_64 docker-ce-rootless-extras.x86_64 docker-scan-plugin.x86_64 -y
+      systemctl stop docker
+      rm -rf /etc/docker
+      rm -rf /run/docker
+      rm -rf /var/lib/dockershim
+      rm -rf /var/lib/docker
+      yum remove containerd.io.x86_64 docker-ce.x86_64 docker-ce-cli.x86_64 docker-ce-rootless-extras.x86_64 docker-scan-plugin.x86_64 -y
+      exit 1
 }
 
 # 安装docker-compose
@@ -61,7 +62,7 @@ install_docker-compose() {
       sudo chmod +x /usr/local/bin/docker-compose
       sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
       echo "docker-compose安装完成 ！！！"
-      message
+      exit 1
 }
 
 main(){
