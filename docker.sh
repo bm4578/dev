@@ -8,10 +8,9 @@ message(){
   注意：需要以root账户运行，不然容易出权限bug
   0.安装国内镜像(阿里源)，以及基本软件(wget、vim、git)
   1.卸载docker
-  2.安装docker(腾讯源)
+  2.安装docker(中科大源)
   3.安装docker-compose
-  4.安装minio(必须具备docker、docker-compose环境)
-  5.退出脚本
+  4.退出脚本
   输入数字(1-5),选择你要进行的操作:" num
   return "$num"
 }
@@ -35,7 +34,7 @@ install_docker() {
       echo "安装国内加速器中"
       sudo mkdir -p /etc/docker
       sudo tee /etc/docker/daemon.json <<-'EOF'
-      {"registry-mirrors": ["https://mirror.ccs.tencentyun.com"]}
+      {"registry-mirrors": ["https://docker.mirrors.ustc.edu.cn"]}
 EOF
       sudo systemctl daemon-reload
       sudo systemctl restart docker
@@ -64,23 +63,6 @@ install_docker-compose() {
       message
 }
 
-# 安装minio
-install_minio() {
-      cd /home
-      mkdir -p "minio/minio_data"
-      cd minio
-      chown 1001 minio_data
-      wget https://link.storjshare.io/s/jx6nbon5k7o447td2cmicercyvma/data/dev/docker/minio/docker-compose.yml?download=1 -O docker-compose.yml
-      docker-compose up -d
-      firewall-cmd --zone=public --add-port=9000-9001/tcp --permanent
-      echo "minio安装完成"
-      cat docker-compose.yml
-      echo "进入：ip:9001
-      输入上述账号和密码登录"
-      exit 1
-}
-
-
 main(){
       message
       case $? in
@@ -97,9 +79,6 @@ main(){
         install_docker-compose
         ;;
         4)
-        install_minio
-        ;;
-        5)
         exit 1
         ;;
         *)
