@@ -8,7 +8,7 @@ PS : 目前仅支持centos
 
 2. 安装git
    ```shell
-       yum install -y git
+   yum install -y git
    ```
 4. 克隆仓库,国内请[参考](https://gitee.com/bmt4578/minio)
     ```shell
