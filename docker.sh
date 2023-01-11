@@ -5,8 +5,8 @@
 message(){
   # shellcheck disable=SC2162
   read -p "
-  注意：需要以root账户运行，不然容易出权限bug
-  0.安装国内镜像(阿里源)，以及基本软件(wget、vim、git)
+  注意：需要以root权限运行，不然容易出权限bug
+  0.安装国内yum源(中科大源)，以及基本软件(wget、vim、git)
   1.卸载docker
   2.安装docker(中科大源)
   3.安装docker-compose
@@ -15,16 +15,18 @@ message(){
   return "$num"
 }
 
-# 配置基本环境
+# 配置基本环境 ,参考文档：https://mirrors.ustc.edu.cn/help/centos.html
 environment() {
-      curl -o /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo
+      sudo sed -e 's|^mirrorlist=|#mirrorlist=|g' \
+         -e 's|^#baseurl=http://mirror.centos.org/centos|baseurl=https://mirrors.ustc.edu.cn/centos|g' \
+         -i.bak \
+         /etc/yum.repos.d/CentOS-Base.repo
       yum makecache
       yum install -y epel-release
       yum update -y
       yum install -y wget vim
-      echo "docker安装完成！！"
+      echo "系统初始化完成 ！！！"
       message
-
 }
 # 安装docker
 install_docker() {
