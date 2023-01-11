@@ -31,9 +31,10 @@ environment() {
 # 安装docker
 install_docker() {
       curl -sSL https://get.daocloud.io/docker | sh
+      echo "docker安装完成！！！"
       systemctl enable docker
       systemctl start docker
-      echo "安装国内加速器中"
+      echo "安装国内加速器中 ..."
       sudo mkdir -p /etc/docker
       sudo tee /etc/docker/daemon.json <<-'EOF'
       {"registry-mirrors": ["https://docker.mirrors.ustc.edu.cn"]}
@@ -41,7 +42,7 @@ EOF
       sudo systemctl daemon-reload
       sudo systemctl restart docker
       systemctl restart docker
-      echo "docker安装完成！！！"
+      echo "docker加速器安装完成 ！！！"
       message
 }
 # 卸载docker
@@ -61,7 +62,7 @@ install_docker-compose() {
       curl -L https://get.daocloud.io/docker/compose/releases/download/v2.4.1/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
       sudo chmod +x /usr/local/bin/docker-compose
       sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
-      echo "docker-compose安装完成！！！"
+      echo "docker-compose安装完成 ！！！"
       message
 }
 
