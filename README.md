@@ -19,6 +19,6 @@ PS : 目前仅支持centos
     ```shell
     bash docker.sh 
     ```
-   ![](https://raw.githubusercontent.com/bm4578/images/master/202212291150005.png)
+   ![](https://raw.githubusercontent.com/bm4578/images/master/202301111918656.png)
 7. 若有问题及时联系。
    <br>邮箱:bmt4578@gmail.com
