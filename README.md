@@ -10,7 +10,7 @@ PS : 目前仅支持centos
    ```shell
    yum install -y git
    ```
-4. 克隆仓库,国内请[参考](https://gitee.com/bmt4578/minio)
+4. 克隆仓库,国内请[参考](https://gitee.com/bmt4578/docker.git)
     ```shell
     git clone https://github.com/bm4578/docker.git
     cd docker
