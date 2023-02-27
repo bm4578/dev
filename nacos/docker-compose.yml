@@ -4,7 +4,8 @@ services:
     image: nacos/nacos-server:v2.1.0
     container_name: nacos-standalone
     volumes:
-    - ./standalone-logs/:/home/nacos/logs
+      - ./standalone-logs/:/home/nacos/logs
+      - ./init.d/custom.properties:/home/nacos/init.d/custom.properties
     ports:
-    - "8848:8848"
-    - "9848:9848"
+      - "8848:8848"
+      - "9848:9848"
