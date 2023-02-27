@@ -1,0 +1,19 @@
+version: '3'
+services:
+  mysql_5.7:
+    #构建mysql镜像
+    image: mysql:5.7
+    container_name: mysql_5.7 # 容器名
+    #    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456 #root管理员用户密码
+    #      MYSQL_USER: test   #创建test用户
+    #      MYSQL_PASSWORD: test  #设置test用户的密码
+    ports:
+      - '13306:3306'  #host物理直接映射端口为13306
+    volumes:
+      #mysql数据库挂载到host物理机目录
+      - ./data/db:/var/lib/mysql
+      #容器的配置目录挂载到host物理机目录
+      - ./data/conf:/etc/mysql/conf.d
