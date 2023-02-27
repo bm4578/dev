@@ -17,3 +17,4 @@
     ```shell
     docker-compose up -d
     ```
+PS：后续会不定期更新其它服务，若对您有帮助可以点一个免费的Star
