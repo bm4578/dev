@@ -8,7 +8,6 @@ services:
       - MODE=standalone
     volumes:
       - ./standalone-logs/:/home/nacos/logs
-      - ./init.d/custom.properties:/home/nacos/init.d/custom.properties
     ports:
       - "8848:8848"
       - "9848:9848"
