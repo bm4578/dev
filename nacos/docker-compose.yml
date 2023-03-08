@@ -1,13 +1,12 @@
-version: "2"
+version: '3'
 services:
   nacos:
     image: nacos/nacos-server:latest
-    container_name: nacos-standalone
-    environment:
-      - PREFER_HOST_MODE=hostname
-      - MODE=standalone
-    volumes:
-      - ./standalone-logs/:/home/nacos/logs
     ports:
       - "8848:8848"
-      - "9848:9848"
+    environment:
+      - MODE=standalone
+    volumes:
+      - ./data:/home/nacos/data
+      - ./logs:/home/nacos/logs
+      - ./init.d:/home/nacos/init.d
