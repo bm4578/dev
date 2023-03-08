@@ -6,8 +6,6 @@ services:
       - "8848:8848"
     environment:
       - PREFER_HOST_MODE=hostname
-      - NACOS_USER=codetype
-      - NACOS_PASS=codetype1234
     volumes:
       - ./data:/home/nacos/data
       - ./logs:/home/nacos/logs
