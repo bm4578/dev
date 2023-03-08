@@ -6,8 +6,6 @@ services:
       - "8848:8848"
     environment:
       - MODE=standalone
-      - NACOS_USER=admin   # 指定用户名
-      - NACOS_PASS=123456  # 指定密码
     volumes:
       - ./data:/home/nacos/data
       - ./logs:/home/nacos/logs
