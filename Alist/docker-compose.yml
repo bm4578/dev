@@ -1,0 +1,10 @@
+version: '3'
+services:
+  Alist:
+    image: xhofe/alist:latest
+    container_name: Alist
+    restart: always
+    ports:
+      - "4005:5244"
+    volumes:
+      - ./data:/opt/alist/data # 要备份的目录
