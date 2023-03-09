@@ -3,6 +3,7 @@ services:
   nacos:
     image: nacos/nacos-server:latest
     restart: always
+    privileged: true
     ports:
       - "8848:8848"
     environment:
