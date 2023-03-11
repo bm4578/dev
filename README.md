@@ -6,7 +6,7 @@
        ```
    - 国内请参考：
       ```shell
-      https://gitee.com/bmt4578/docker-comopose.git
+       git clone https://gitee.com/bmt4578/docker-comopose.git
       ```
 2. 进入要安装的目录，这里以mysql为例
     ```shell
