@@ -1,8 +1,13 @@
 # 使用说明
 1. 拉取仓库
-    ```shell
-    git clone https://github.com/bm4578/docker-compose.git
-    ```
+   - 国外请参考：
+       ```shell
+       git clone https://github.com/bm4578/docker-compose.git
+       ```
+   - 国内请参考：
+      ```shell
+      https://gitee.com/bmt4578/docker-comopose.git
+      ```
 2. 进入要安装的目录，这里以mysql为例
     ```shell
     cd docker-compose/mysql/mysql8.0.27
