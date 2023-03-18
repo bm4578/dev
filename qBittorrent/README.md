@@ -1,5 +1,5 @@
 ## qBittorrent ： 一款开源的下载神器
-PS：默认账号：admin,默认密码：adminadmin
+PS：默认账号：admin,默认密码：adminadmin ，教程参考[咕咕鸽](https://blog.laoda.de/archives/docker-install-qbittorrent) 。
 
 
 ### 修改限速端口，需与docker-compose中的端口一致。然后开放防火墙
