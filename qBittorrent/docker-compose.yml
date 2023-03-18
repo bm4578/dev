@@ -13,8 +13,8 @@ services:
       - ./config:/config
       - ./downloads:/downloads
     ports:
-      - 19915:6881
-      - 19915:6881/udp
+      - 19915:19915
+      - 19915:19915/udp
       - 8081:8081
     restart: unless-stopped
 
