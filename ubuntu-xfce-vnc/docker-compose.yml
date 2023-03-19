@@ -4,7 +4,7 @@ services:
   ubuntu-xfce-vnc:
     container_name: xfce
     image: imlala/ubuntu-xfce-vnc-novnc:latest
-    shm_size: "4gb"  # 防止高分辨率下Chromium崩溃,如果内存足够也可以加大一点点
+    shm_size: "2gb"  # 防止高分辨率下Chromium崩溃,如果内存足够也可以加大一点点
     ports:
       - 5900:5900   # TigerVNC的服务端口（保证端口是没被占用的，冒号右边的端口不能改，左边的可以改）
       - 6080:6080   # noVNC的服务端口，注意事项同上
