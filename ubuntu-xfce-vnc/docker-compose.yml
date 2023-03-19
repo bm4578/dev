@@ -7,7 +7,7 @@ services:
     environment:
       - VNC_COL_DEPTH=24
       - VNC_RESOLUTION=1280x800
-      - AUDIO_DEVICE=hw:0,0
+      - AUDIO_DEVICE=hw:2,0
     devices:
       - /dev/snd:/dev/snd
     volumes:
