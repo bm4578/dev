@@ -14,6 +14,7 @@ services:
       - PASSWORD=password       # 密码
       - GEOMETRY=1920x1080      # 屏幕分辨率
       - DEPTH=32               # 颜色位数，即画质
+      - ALSADEV=hw:2,0
     volumes:
       - ./Downloads:/root/Downloads
       - ./Documents:/root/Documents
