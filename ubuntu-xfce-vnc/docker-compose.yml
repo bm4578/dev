@@ -3,7 +3,7 @@ version: '3.5'
 services:
   ubuntu-xfce-vnc:
     container_name: xfce
-    image: dorowu/ubuntu-desktop-lxde-vnc:focal # 拉取Ubuntu 20.04 (latest)
+    image: dorowu/ubuntu-desktop-lxde-vnc:latest # 拉取Ubuntu 20.04 (latest)
     shm_size: "2gb"  # 指定内存大小
     ports:
       - 5900:5900
