@@ -1,28 +1,14 @@
 version: '3'
 services:
-  desktop:
+  ubuntu-desktop:
     image: dorowu/ubuntu-desktop-lxde-vnc
-    environment:
-      VNC_PW: "yourpassword"
-      VNC_RESOLUTION: "1280x720"
-      PULSE_SERVER: "tcp:desktop-pulseaudio:4713"
-    volumes:
-      - "./data:/data"
     ports:
       - "6080:80"
-    depends_on:
-      - pulseaudio
-    networks:
-      - vnc-network
-  pulseaudio:
-    image: jess/pulseaudio
     environment:
-      PULSE_SERVER: "tcp:0.0.0.0:4713"
-      PULSE_COOKIE: "/run/pulse/cookie"
-      PULSE_COOKIE_MODE: "0600"
+      - VNC_COL_DEPTH=24
+      - VNC_RESOLUTION=1280x800
+      - AUDIO_DEVICE=hw:0,0
+    devices:
+      - /dev/snd:/dev/snd
     volumes:
-      - "./pulse:/run/pulse"
-    networks:
-      - vnc-network
-networks:
-  vnc-network:
+      - ./shared:/root/shared
