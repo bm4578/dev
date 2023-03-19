@@ -5,8 +5,8 @@ services:
     restart: always
     hostname: 'gitlab.example.com'
     ports:
-      - '80:80'
-      - '443:443'
+      - '180:80'
+      - '1443:443'
       - '2222:22'
     volumes:
       - ./config:/etc/gitlab
