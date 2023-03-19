@@ -5,13 +5,15 @@ services:
     container_name: xfce
     image: dorowu/ubuntu-desktop-lxde-vnc
     shm_size: "2gb"  # 指定内存大小
+    devices:
+      - /dev/snd:/dev/snd   # 声音
     ports:
       - 6080:80   # 访问端口
     environment:
       - GEOMETRY=1920x1080      # 屏幕分辨率
       - DEPTH=32               # 颜色位数，即画质
+      - ALSADEV=hw:2,0
     volumes:
-      - /dev/snd:/dev/snd
       - ./Downloads:/root/Downloads
       - ./Documents:/root/Documents
       - ./Pictures:/root/Pictures
