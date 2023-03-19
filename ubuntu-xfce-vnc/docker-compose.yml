@@ -5,11 +5,13 @@ services:
     container_name: xfce
     image: dorowu/ubuntu-desktop-lxde-vnc:latest # 拉取Ubuntu 20.04 (latest)
     shm_size: "2gb"  # 指定内存大小
+    devices:
+      - /dev/snd:/dev/snd   # 声音
     ports:
       - 5900:5900
       - 6080:80   # 访问端口
     environment:
-      - VNC_PASSWD=123456    # 密码
+      - HTTP_PASSWORD=mypassword # 密码
       - GEOMETRY=1920x1080      # 屏幕分辨率
       - DEPTH=32               # 颜色位数，即画质
     volumes:
