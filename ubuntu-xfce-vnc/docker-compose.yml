@@ -7,7 +7,7 @@ services:
     shm_size: "2gb"  # 指定内存大小
     ports:
       - 5900:5900
-      - 6080:6080   # 访问端口
+      - 6080:80   # 访问端口
     environment:
       - VNC_PASSWD=123456    # 密码
       - GEOMETRY=1920x1080      # 屏幕分辨率
