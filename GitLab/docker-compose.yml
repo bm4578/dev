@@ -4,9 +4,6 @@ services:
     image: 'gitlab/gitlab-ce:latest'
     restart: always
     hostname: 'gitlab.example.com'
-    environment:
-      GITLAB_OMNIBUS_CONFIG: |
-        external_url 'http://gitlab.example.com'
     ports:
       - '80:80'
       - '443:443'
