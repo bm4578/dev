@@ -1,22 +1,28 @@
-version: '3.5'
-
+version: '3'
 services:
-  ubuntu-xfce-vnc:
-    container_name: xfce
+  desktop:
     image: dorowu/ubuntu-desktop-lxde-vnc
-    shm_size: "2gb"  # 指定内存大小
-    devices:
-      - /dev/snd:/dev/snd   # 声音
-    ports:
-      - 6080:80   # 访问端口
     environment:
-      - GEOMETRY=1920x1080      # 屏幕分辨率
-      - DEPTH=32               # 颜色位数，即画质
-      - ALSADEV=hw:2,0
+      VNC_PW: "yourpassword"
+      VNC_RESOLUTION: "1280x720"
+      PULSE_SERVER: "tcp:desktop-pulseaudio:4713"
     volumes:
-      - ./Downloads:/root/Downloads
-      - ./Documents:/root/Documents
-      - ./Pictures:/root/Pictures
-      - ./Videos:/root/Videos
-      - ./Music:/root/Music
-    restart: unless-stopped
+      - "./data:/data"
+    ports:
+      - "6080:80"
+    depends_on:
+      - pulseaudio
+    networks:
+      - vnc-network
+  pulseaudio:
+    image: jess/pulseaudio
+    environment:
+      PULSE_SERVER: "tcp:0.0.0.0:4713"
+      PULSE_COOKIE: "/run/pulse/cookie"
+      PULSE_COOKIE_MODE: "0600"
+    volumes:
+      - "./pulse:/run/pulse"
+    networks:
+      - vnc-network
+networks:
+  vnc-network:
