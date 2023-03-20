@@ -7,6 +7,8 @@ services:                                      # 集合
     container_name: jenkins                    # 容器名称
     environment:
       - TZ=Asia/Shanghai
+      - JENKINS_UC=https://mirrors.cloud.tencent.com/jenkins
+      - JENKINS_UC_DOWNLOAD=https://mirrors.cloud.tencent.com/jenkins
     ports:                                     # 对外暴露的端口定义
       - 8080:8080                              # 访问Jenkins服务端口
       - 50000:50000
