@@ -1,18 +1,17 @@
 version: '3'
-services:
-  jenkins:
-    image: jenkins/jenkins:lts
-    container_name: jenkins
-    user: "root"
-    ports:
-      - "8080:8080"
-      - "50000:50000"
-    volumes:
-      - ./jenkins_home:/var/jenkins_home
-      - /var/run/docker.sock:/var/run/docker.sock
-      - /usr/bin/docker:/usr/bin/docker
+services:                                      # 集合
+  docker_jenkins:
+    user: root                                 # 为了避免一些权限问题 在这我使用了root
+    restart: always                            # 重启方式
+    image: jenkins/jenkins:lts                 # 指定服务所使用的镜像 在这里我选择了 LTS (长期支持)
+    container_name: jenkins                    # 容器名称
     environment:
-      - JENKINS_OPTS="--prefix=/jenkins"
-      - JAVA_OPTS="-Djenkins.install.runSetupWizard=false -Djava.awt.headless=true -Djenkins.model.Jenkins.logStartupPerformance=true -Dhudson.model.ParametersAction.keepUndefinedParameters=true"
       - TZ=Asia/Shanghai
-    restart: always
+    ports:                                     # 对外暴露的端口定义
+      - 8080:8080                              # 访问Jenkins服务端口
+      - 50000:50000
+    volumes:                                   # 卷挂载路径
+      - ./jenkins_home/:/var/jenkins_home  # 这是我们一开始创建的目录挂载到容器内的jenkins_home目录
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /usr/bin/docker:/usr/bin/docker                # 这是为了我们可以在容器内使用docker命令
+      - /usr/local/bin/docker-compose:/usr/local/bin/docker-compose
