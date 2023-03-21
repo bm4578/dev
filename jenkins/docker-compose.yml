@@ -6,9 +6,10 @@ services:                                      # 集合
     image: jenkins/jenkins:lts                 # 指定服务所使用的镜像 在这里我选择了 LTS (长期支持)
     container_name: jenkins                    # 容器名称
     environment:
-      - TZ=Asia/Shanghai
-      - JENKINS_UC=https://mirrors.ustc.edu.cn/jenkins            # 配置中科大镜像站
-      - JENKINS_UC_DOWNLOAD=https://mirrors.ustc.edu.cn/jenkins   # 配置中科大镜像站
+      TZ: Asia/Shanghai
+      JENKINS_UC: https://mirrors.ustc.edu.cn/jenkins            # 配置中科大镜像站
+      ENKINS_UC_DOWNLOAD: https://mirrors.ustc.edu.cn/jenkins   # 配置中科大镜像站
+
     ports:                                     # 对外暴露的端口定义
       - 8080:8080                              # 访问Jenkins服务端口
       - 50000:50000
