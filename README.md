@@ -11,7 +11,7 @@ PS : 目前仅支持centos
    ```
 4. 克隆仓库
     ```shell
-    https://github.com/bm4578/dev.git
+    git clone https://github.com/bm4578/dev.git
     cd dev
     ```
 5. 运行脚本
