@@ -30,7 +30,7 @@ environment() {
 }
 # 安装docker
 install_docker() {
-      curl -sSL https://get.daocloud.io/docker | sh
+      curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun
       echo "docker安装完成！！！"
       systemctl enable docker
       systemctl start docker
