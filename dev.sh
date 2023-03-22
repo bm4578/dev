@@ -30,10 +30,14 @@ environment() {
 }
 # 安装docker
 install_docker() {
-      curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun
+      sudo yum install -y yum-utils device-mapper-persistent-data lvm2
+      sudo yum-config-manager \
+      --add-repo \
+      https://mirrors.ustc.edu.cn/docker-ce/linux/centos/docker-ce.repo
+      sudo yum install -y docker-ce
+      sudo systemctl start docker
+      sudo systemctl enable docker
       echo "docker安装完成！！！"
-      systemctl enable docker
-      systemctl start docker
       echo "安装国内加速器中 ..."
       sudo mkdir -p /etc/docker
       sudo tee /etc/docker/daemon.json <<-'EOF'

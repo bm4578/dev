@@ -54,3 +54,6 @@ PS : 目前仅支持centos
     docker-compose up -d
     ```
 4. 若有问题及时联系:邮箱:bmt4578@gmail.com ，后续会不定期更新其它服务，若对您有帮助可以点一个免费的Star。   
+   sudo yum-config-manager \
+   --add-repo \
+   https://mirrors.ustc.edu.cn/docker-ce/linux/centos/docker-ce.repo
