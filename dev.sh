@@ -10,7 +10,8 @@ message(){
   1.卸载docker
   2.安装docker(中科大源)
   3.安装docker-compose
-  4.退出脚本
+  4.安装宝塔面板
+  5.退出脚本
   输入数字(1-5),选择你要进行的操作:" num
   return "$num"
 }
@@ -65,6 +66,10 @@ install_docker-compose() {
       exit 1
 }
 
+install_baoTA(){
+      yum install -y wget && wget -O install.sh https://download.bt.cn/install/install_6.0.sh && sh install.sh ed8484bec
+}
+
 main(){
       message
       case $? in
@@ -81,6 +86,9 @@ main(){
         install_docker-compose
         ;;
         4)
+        install_baoTA
+        ;;
+        5)
         exit 1
         ;;
         *)
