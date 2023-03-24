@@ -1,12 +1,11 @@
-version: '3'
+version: '3.3'
 services:
-  dynu-client:
-    container_name: dynu-client
-    image: whw3/dynu-client
-    environment:
-      - USERNAME=your_dynu_username  # Dynu帐户用户名
-      - PASSWORD=your_dynu_password  # 密码
-      - HOSTNAME=your_domain_name    # 更新的域名
-      - INTERVAL=600                 # 更新间隔时间
+  alpine:
+    image: nortismo/dynu-ddns-updater
     restart: always
+    container_name: dynu-ddns-updater
+    environment:
+      - DYNU_USERNAME=<type-in-your-username-here>
+      - DYNU_PASSWORD=<type-in-your-password-here>
+      - DYNU_DDNS_DOMAIN=<type-in-your-domain-here>
 
