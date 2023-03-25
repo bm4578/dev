@@ -13,7 +13,5 @@ services:
     ports:
       - '3306:3306'  #host物理直接映射端口为3306
     volumes:
-      #mysql数据库挂载到host物理机目录
-      - ./data/db:/var/lib/mysql
-      #容器的配置目录挂载到host物理机目录
-      - ./data/conf:/etc/mysql/conf.d
+        #mysql数据库挂载到host物理机目录
+      - ./data:/var/lib/mysql
