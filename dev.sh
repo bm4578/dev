@@ -59,7 +59,7 @@ uninstall_docker(){
 
 # 安装docker-compose
 install_docker-compose() {
-      wget https://link.storjshare.io/jvczi5rjeusvbksrn7a2jo2a6nya/data%2Fdev%2Fjava%2Fdocker-compose?download=1 -O/usr/local/bin/docker-compose
+      wget http://bm4578.eu.org:46086/lost+found/dev/docker/docker-compose
       sudo chmod +x /usr/local/bin/docker-compose
       sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
       echo "docker-compose安装完成 ！！！"
