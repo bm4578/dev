@@ -1,4 +1,4 @@
-## Centos7 系统初始化
+# Centos7 系统初始化
 
 PS : 目前仅支持centos
 1. 远程ssh连接云服务器
