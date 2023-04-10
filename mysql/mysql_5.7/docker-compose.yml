@@ -15,5 +15,3 @@ services:
     volumes:
       #mysql数据库挂载到host物理机目录
       - ./data/db:/var/lib/mysql
-      #容器的配置目录挂载到host物理机目录
-      - ./data/conf:/etc/mysql/conf.d
