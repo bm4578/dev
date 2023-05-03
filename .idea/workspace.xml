@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="ALL" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="/Library/Java/mvn_resp" />
+        <option name="mavenHome" value="/Library/Java/apache-maven-3.8.4" />
+        <option name="userSettingsFile" value="/Library/Java/apache-maven-3.8.4/conf/settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="com.intellij.openapi.externalSystem.service.settings.ExternalSystemGroupConfigurable" value="ALL" />
+    <property name="settings.editor.selected.configurable" value="http.proxy" />
+  </component>
+</project>
