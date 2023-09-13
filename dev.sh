@@ -18,14 +18,12 @@ message(){
 
 # 配置基本环境 ,参考文档：https://mirrors.ustc.edu.cn/help/centos.html
 environment() {
-      sudo sed -e 's|^mirrorlist=|#mirrorlist=|g' \
-         -e 's|^#baseurl=http://mirror.centos.org/centos|baseurl=https://mirrors.ustc.edu.cn/centos|g' \
-         -i.bak \
-         /etc/yum.repos.d/CentOS-Base.repo
+      yum install -y wget
+      sudo wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo
       yum makecache
       yum install -y epel-release
       yum update -y
-      yum install -y wget vim htop
+      yum install -y vim htop
       echo "系统初始化完成 ！！！"
       exit 1
 }
