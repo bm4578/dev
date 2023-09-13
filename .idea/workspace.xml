@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4190bce6-4850-4248-a497-b11546a24b8e" name="默认变更列表" comment="&quot;设置不提交的目录&quot;">
+    <list default="true" id="4190bce6-4850-4248-a497-b11546a24b8e" name="默认变更列表" comment="&quot;更换centos安装源&quot;">
+      <change afterPath="$PROJECT_DIR$/docker-compose" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev.sh" beforeDir="false" afterPath="$PROJECT_DIR$/dev.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,20 +40,28 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.openapi.externalSystem.service.settings.ExternalSystemGroupConfigurable" value="ALL" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="settings.editor.selected.configurable" value="http.proxy" />
   </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\by\IdeaProjects\dev" />
+    </key>
+  </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -61,12 +71,12 @@
   <component name="TaskManager">
     <task active="true" id="Default" summary="默认任务">
       <changelist id="4190bce6-4850-4248-a497-b11546a24b8e" name="默认变更列表" comment="" />
-      <changelist id="" name="&quot;修复centos不能安装docker的bug&quot;" comment="" />
       <created>1694567649980</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1694567649980</updated>
-      <workItem from="1694567653261" duration="3698000" />
+      <workItem from="1694567653261" duration="5147000" />
+      <workItem from="1694594391695" duration="1073000" />
     </task>
     <task id="LOCAL-00001" summary="&quot;修复centos不能安装docker的bug&quot;">
       <created>1694572858538</created>
@@ -89,7 +99,14 @@
       <option name="project" value="LOCAL" />
       <updated>1694573167565</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="&quot;更换centos安装源&quot;">
+      <created>1694574355095</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1694574355095</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -105,10 +122,12 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="&quot;修复centos不能安装docker的bug&quot;" />
     <MESSAGE value="&quot;设置不提交的目录&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="&quot;设置不提交的目录&quot;" />
+    <MESSAGE value="&quot;更换centos安装源&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="&quot;更换centos安装源&quot;" />
   </component>
 </project>

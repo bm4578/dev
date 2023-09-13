@@ -57,7 +57,7 @@ uninstall_docker(){
 
 # 安装docker-compose
 install_docker-compose() {
-      wget http://bm4578.eu.org:46086/dev/docker/docker-compose
+      curl -L https://get.daocloud.io/docker/compose/releases/download/v2.4.1/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
       sudo chmod +x /usr/local/bin/docker-compose
       sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
       echo "docker-compose安装完成 ！！！"
