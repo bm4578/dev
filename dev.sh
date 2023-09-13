@@ -6,7 +6,7 @@ message(){
   # shellcheck disable=SC2162
   read -p "
   注意：需要以root权限运行，不然容易出权限bug
-  0.安装国内yum源(中科大源)，以及基本软件(wget、vim、htop)
+  0.安装国内yum源(阿里源)，以及基本软件(wget、vim、htop)
   1.卸载docker
   2.安装docker(中科大源)
   3.安装docker-compose
